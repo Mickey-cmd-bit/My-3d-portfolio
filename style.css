@@ -1,0 +1,79 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  background: #000;
+  color: white;
+}
+
+#waveCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.boat {
+  position: fixed;
+  width: 120px;
+  animation: float 3s ease-in-out infinite;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 50%;
+  z-index: 1;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-15px); }
+}
+
+.portfolio-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 25px;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.portfolio-content.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  background: linear-gradient(to right, #0ff, #f0f);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.card-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.card {
+  background: #111;
+  padding: 20px;
+  border-radius: 15px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 0 20px #0ff4;
+  transition: transform 0.3s ease;
+}
+.card a {
+  color: #0ff;
+  text-decoration: none;
+}
