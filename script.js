@@ -1,38 +1,37 @@
-// 3D Tilt for Cards
-VanillaTilt.init(document.querySelectorAll(".card"), {
-  max: 25,
-  speed: 400,
-  glare: true,
-  "max-glare": 0.4
-});
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maverick's Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="ripple-canvas"></canvas>
 
-// Canvas Water Waves
-const canvas = document.getElementById('waveCanvas');
-const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+  <div class="content">
+    <header>
+      <h1 class="title">PORTFOLIO</h1>
+      <p class="subtitle">......ABOUT ME......</p>
+    </header>
 
-let waveOffset = 0;
-function drawWaves() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.beginPath();
-  for (let x = 0; x < canvas.width; x++) {
-    const y = 20 * Math.sin((x + waveOffset) * 0.01) + canvas.height / 1.7;
-    ctx.lineTo(x, y);
-  }
-  ctx.strokeStyle = "#00f2ff88";
-  ctx.lineWidth = 3;
-  ctx.stroke();
-  waveOffset += 2;
-  requestAnimationFrame(drawWaves);
-}
-drawWaves();
+    <section class="about">
+      <img src="character.jpg" alt="Maverick" class="profile-pic" />
+      <p class="description">
+        I'm Maverick. I am a brilliant and creative individual with a strong grip on tech, AI, and automation. Known for my calm mindset and smart problem-solving skills, I blend technical expertise with a fun and grounded personality. Whether it's scripting bots, solving puzzles, or building something from scratch, I handle it like a pro—always eager to learn and help others grow too.
+      </p>
+    </section>
 
-// Touch Interaction
-const content = document.querySelector(".portfolio-content");
-document.body.addEventListener("touchstart", () => {
-  content.classList.add("show");
-});
-document.body.addEventListener("touchend", () => {
-  content.classList.remove("show");
-});
+    <section class="contact">
+      <h2>Contact Me</h2>
+      <ul>
+        <li><strong>Email:</strong> maverick@example.com</li>
+        <li><strong>GitHub:</strong> <a href="https://github.com/maverick">github.com/maverick</a></li>
+        <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/maverick">linkedin.com/in/maverick</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
